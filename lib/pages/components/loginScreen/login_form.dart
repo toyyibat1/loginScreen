@@ -13,6 +13,14 @@ class _LoginFormState extends State<LoginForm> {
   String email;
   String password;
   bool remember = false;
+
+  final String title;
+
+  TextEditingController userNameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
+  _LoginFormState({Key key, this.title});
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -65,7 +73,8 @@ class _LoginFormState extends State<LoginForm> {
             _formKey.currentState.validate()){
             _formKey.currentState.save();
             }
-          Navigator.pushNamed(context, HomeScreen.routeName);
+          Navigator.pushNamed(context, HomeScreen.routeName,
+          arguments: "Hello");
         },
         
         child: Text(
@@ -86,7 +95,9 @@ class _LoginFormState extends State<LoginForm> {
             prefixIcon: Icon(Icons.lock),
             suffixIcon: Padding(
               padding: EdgeInsets.fromLTRB(0, 20, 20, 20),
-            )));
+            )),
+            controller: passwordController,
+    );
   }
 
   TextFormField buildEmailFormField() {
@@ -109,4 +120,6 @@ class _LoginFormState extends State<LoginForm> {
               padding: EdgeInsets.fromLTRB(0, 20, 20, 20),
             )));
   }
+
+
 }

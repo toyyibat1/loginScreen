@@ -10,11 +10,10 @@ class Body extends StatelessWidget {
       child: SizedBox(
         width: double.infinity,
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.symmetric(horizontal: 10),
           child: SingleChildScrollView(
-                      child: Column(
+            child: Column(
               children: <Widget>[
-                SizedBox(height: size.height * 0.04),
                 Text(
                   "Welcome Back",
                   style: TextStyle(
@@ -25,12 +24,11 @@ class Body extends StatelessWidget {
                 Text(
                     "Login with your email and password \nor Continue with social media",
                     textAlign: TextAlign.center),
-                SizedBox(height: size.height * 0.08),
+                SizedBox(height: size.height * 0.02),
                 LoginForm(),
-                SizedBox(height: size.height * 0.08),
+                SizedBox(height: size.height * 0.02),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  
                   children: [
                     SocialMediaCard(
                       icon: "assets/icons/google.svg",
@@ -46,14 +44,14 @@ class Body extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height:20),
+                SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text("Don't have an account?",
                         style: TextStyle(fontSize: 16)),
-                    Text("Sign Up", style: TextStyle(fontSize: 16,
-                    color: Colors.red))
+                    Text("Sign Up",
+                        style: TextStyle(fontSize: 16, color: Colors.red))
                   ],
                 )
               ],
@@ -84,8 +82,7 @@ class SocialMediaCard extends StatelessWidget {
         padding: EdgeInsets.all(12),
         height: 40,
         width: 40,
-        decoration: BoxDecoration(
-        color: Colors.white, shape: BoxShape.circle),
+        decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
         child: SvgPicture.asset(icon),
       ),
     );
